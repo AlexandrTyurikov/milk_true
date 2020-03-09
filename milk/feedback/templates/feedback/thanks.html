@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Спасибо{% endblock %}
+
+{% block content %}
 
 <div style="text-align: center">
-    <h3>Спасибо, Ваше сообщение отправлено!</h3>
+    <h3 class="text-dark">Спасибо, Ваше сообщение отправлено!</h3>
     <div><a href="{% url 'contact' %}">
-        <button type="button">Вернутся назад</button>
+        <button type="button" class="btn btn-info">Вернутся назад</button>
     </a></div>
 </div>
 
-</body>
-</html>
+{% endblock %}

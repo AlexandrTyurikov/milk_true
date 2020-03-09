@@ -1,19 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    {% load crispy_forms_tags %}
-</head>
-<body>
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
-<h2 class="panel-title">Обратная связь</h2>
-<form action="" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <br>
-    <button type="submit">Отправить сообщение</button>
-</form>
+{% block title %}Обратная связь{% endblock %}
 
-</body>
-</html>
+{% block content %}
+<div class="float-center">
+    <h2 class="panel-title text-dark">Обратная связь</h2>
+    <form action="" method="POST" enctype="multipart/form-data" style="width: 500px">
+
+        {% csrf_token %}
+        {{ form|crispy }}
+        <br>
+        <button class="btn btn-success" type="submit">Отправить сообщение</button>
+
+    </form>
+</div>
+{% endblock %}
